@@ -187,7 +187,7 @@ export class ConanDatasource extends Datasource {
               const [user, channel] = conanPackage.userAndChannel.split('/');
               const packageUrl = joinUrlParts(
                 `${groups.host}/artifactory/api/storage/${groups.repo}`,
-                `${user}/${conanPackage.conanName}/${latestVersion}/${channel}/${packageRev}/export/conanfile.py?properties=conan.package.url`
+                `${user}/${conanPackage.conanName}/${latestVersion}/${channel}/${packageRev}/export/conanfile.py`
               );
               const packageUrlResp = await this.http.getJson<ConanProperties>(
                 packageUrl
